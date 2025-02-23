@@ -18,6 +18,7 @@ class signin : AppCompatActivity() {
     private lateinit var upassword : EditText
     private lateinit var login_button : Button
     private lateinit var create_button : Button
+    private lateinit var forget_password : Button
     private lateinit var mAuth : FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,7 @@ class signin : AppCompatActivity() {
 
         uname = findViewById(R.id.username)
         upassword = findViewById(R.id.user_password)
-
+        forget_password = findViewById(R.id.forget_password)
         login_button = findViewById(R.id.login_button)
         create_button = findViewById(R.id.create_account_button)
         mAuth = Firebase.auth
@@ -36,13 +37,18 @@ class signin : AppCompatActivity() {
             val email = uname.text.toString()
             val password = upassword.text.toString()
             login(email, password)
-            uname.text.clear()
-            upassword.text.clear()
         }
+
         create_button.setOnClickListener {
             val intent = Intent(this, signup::class.java)
             startActivity(intent)
         }
+
+        forget_password.setOnClickListener {
+            val intent = Intent(this, ResetPassword::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun login(email: String, password: String) {
@@ -50,6 +56,8 @@ class signin : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                         startActivity(Intent(this, home::class.java))
+                    uname.text.clear()
+                    upassword.text.clear()
                     Toast.makeText( this,"Logged in Successfully", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText( this,"Some Error Occured", Toast.LENGTH_SHORT).show()

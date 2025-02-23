@@ -46,6 +46,7 @@ class signup : AppCompatActivity() {
             email.text.clear()
             password.text.clear()
         }
+
         login_ac_button.setOnClickListener {
             startActivity(Intent(this, signin::class.java))
         }
