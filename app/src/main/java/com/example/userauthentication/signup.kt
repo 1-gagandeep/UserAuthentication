@@ -20,6 +20,7 @@ class signup : AppCompatActivity() {
     private lateinit var email : EditText
     private lateinit var password : EditText
     private lateinit var res_button : Button
+    private lateinit var login_ac_button : Button
     private lateinit var mAuth : FirebaseAuth
 
 
@@ -33,6 +34,7 @@ class signup : AppCompatActivity() {
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
         res_button = findViewById(R.id.register_button)
+        login_ac_button = findViewById(R.id.login_account_button)
         mAuth = Firebase.auth
 
         res_button.setOnClickListener {
@@ -44,6 +46,10 @@ class signup : AppCompatActivity() {
             email.text.clear()
             password.text.clear()
         }
+        login_ac_button.setOnClickListener {
+            startActivity(Intent(this, signin::class.java))
+        }
+
     }
 
     private fun signup(user_email: String, user_password: String) {

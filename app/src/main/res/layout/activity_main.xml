@@ -10,41 +10,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="140dp"
-        android:text="Go for Signin or Signup"
-        android:textColor="@color/gray"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        />
-
-    <Button
-        android:id="@+id/signin_button"
+    <ImageView
+        android:id="@+id/imgeView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Signin"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        />
-
-    <Button
-        android:id="@+id/signup_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Signup"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"
-        android:textColor="@color/white"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/splash_image"
         />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

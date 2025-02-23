@@ -104,6 +104,7 @@ dependencies {
 
     // Firebase Authentication
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.core.ktx)
 
     // Testing dependencies
     testImplementation(libs.junit)

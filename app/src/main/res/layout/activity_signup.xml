@@ -146,4 +146,35 @@
         android:textSize="18sp"
         />
 
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have account?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray"/>
+
+
+        <Button
+            android:id="@+id/login_account_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SignIn"
+            android:padding="1dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:background="@android:color/transparent"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>
