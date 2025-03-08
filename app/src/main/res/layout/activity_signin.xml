@@ -106,6 +106,19 @@
         android:background="@android:color/transparent"
         />
 
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="Signin With Google"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        android:background="@android:color/transparent"
+        />
+
     <LinearLayout
         android:layout_marginTop="20dp"
         android:layout_marginStart="50dp"

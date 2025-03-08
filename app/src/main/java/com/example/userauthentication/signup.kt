@@ -11,7 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
+
+
 
 class signup : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class signup : AppCompatActivity() {
         password = findViewById(R.id.password)
         res_button = findViewById(R.id.register_button)
         login_ac_button = findViewById(R.id.login_account_button)
-        mAuth = Firebase.auth
+        mAuth = FirebaseAuth.getInstance()
 
         res_button.setOnClickListener {
             val user_email = email.text.toString()
