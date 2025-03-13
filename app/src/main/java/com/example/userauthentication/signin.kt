@@ -2,6 +2,8 @@ package com.example.userauthentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
+import android.view.MotionEvent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -63,6 +65,28 @@ class signin : AppCompatActivity() {
             val intent = Intent(this, ResetPassword::class.java)
             startActivity(intent)
             finish()
+        }
+
+        // Password hiding functionality
+        val passwordEditText = findViewById<EditText>(R.id.user_password)
+        passwordEditText.setOnTouchListener { v, event ->
+            if (event.action == MotionEvent.ACTION_UP) {
+                if (event.rawX >= (passwordEditText.right - passwordEditText.compoundDrawables[2].bounds.width())) {
+                    val currentInputType = passwordEditText.inputType
+                    if (currentInputType == InputType.TYPE_TEXT_VARIATION_PASSWORD or InputType.TYPE_CLASS_TEXT) {
+                        // Show password
+                        passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                        passwordEditText.compoundDrawables[2].setState(intArrayOf(android.R.attr.state_checked))
+                    } else {
+                        // Hide password
+                        passwordEditText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                        passwordEditText.compoundDrawables[2].setState(intArrayOf())
+                    }
+                    passwordEditText.setSelection(passwordEditText.text.length) // Keep cursor at end
+                    return@setOnTouchListener true
+                }
+            }
+            false
         }
 
         // Configure Google Sign-In
